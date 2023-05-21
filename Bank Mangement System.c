@@ -2,10 +2,22 @@
 #include <conio.h>
 #include <stdlib.h>
 void main(void){
-int getIn, balance=0, deposit, check,i,withdraw,checktemp,loan;
-float netRe, inst;
-char name[100]="N/A",lastName[100]="N/A", cnic[100]="N/A", phoneNum[100]="N/A", address[200]="N/A";
-
+	int getIn, balance=0, deposit, check,i,withdraw,checktemp,loan;
+	float netRe, inst;
+	char name[100]="N/A",lastName[100]="N/A", cnic[100]="N/A", phoneNum[100]="N/A", address[200]="N/A";
+	int password=0, defpass=254922;
+	
+	printf("ENTER NAME: ");
+	scanf("%s",&name);
+	printf("ENTER PASSWORD: ");
+	scanf("%d",&password);
+	if (password==defpass){
+		goto restart;
+	}
+	else{
+		printf("INVALID USER");
+		goto end;
+	}
 restart:
 	system("CLS");
 	printf("\t\t\tBANK MANAGEMENT SYSTEM\n");
@@ -124,5 +136,6 @@ if(getIn==4){
 	system("CLS");
 	goto restart;
 }
+end:
 getch();
 }
